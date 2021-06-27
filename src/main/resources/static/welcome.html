@@ -1,0 +1,23 @@
+<html>
+
+<head>
+</head>
+
+<body>
+	<script src="app.js"></script>
+	<h1>Welcome to Credit card App</h1>
+	<label>Enter Bank Name:</label><input type="text" placeholder="Type bank here" id="bank"><br/>
+	<label>Enter 16 digit Credit Card Number:</label><input type="text" id="cardNumber" onkeypress="return allowNumberOnly(event)" maxlength="16" minlength="16"><br/>
+	<label>Select Expiry Date(Month/Year):</label><input type="month" id="expiryDate"><br/>
+	<button type="button" onclick="validateCard()">Add new CreditCard Data</button><br/>
+	<label id="status"></label>
+	<br />
+	<br />
+	<br />
+	<button type="button" onclick="getCardData()">Refresh CreditCard Data</button>
+	<br />
+	<ul id="cardlist">
+	</ul>
+</body>
+
+</html>
