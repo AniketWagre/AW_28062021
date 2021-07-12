@@ -26,9 +26,7 @@ public class CardController {
 
 	@GetMapping(path = "/all", produces = MediaType.APPLICATION_JSON_VALUE)
 	public List<CreditCardRequest> getEmployees() {
-		List<CreditCardRequest> cards = creditCardService.getAllCreditCardsSortedByExpiry();
-		System.out.println(" List count " + cards.size());
-		return cards;
+		return creditCardService.getAllCreditCardsSortedByExpiry();
 	}
 
 	@PostMapping(path = "/add", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)

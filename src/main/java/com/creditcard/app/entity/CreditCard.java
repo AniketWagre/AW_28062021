@@ -13,10 +13,6 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import com.fasterxml.jackson.databind.ser.std.DateSerializer;
-
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -34,18 +30,14 @@ public class CreditCard {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@JsonIgnore
 	private Long id;
 
-	@JsonSerialize
 	@Column(name = "bank")
 	private String bank;
 
-	@JsonSerialize
 	@Column(name = "card_number")
 	private Long cardNumber;
 
-	@JsonSerialize(using = DateSerializer.class)
 	@Column(name = "expiry_date")
 	@Temporal(TemporalType.DATE)
 	private Date expiryDate;
